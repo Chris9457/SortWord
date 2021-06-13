@@ -9,7 +9,7 @@ WordSorter::WordSorter(const Words& words, const bool bReverse, const bool bUniq
 {
 	if (bReverse)
 	{
-		std::sort(m_words.begin(), m_words.end(), [](auto const& lhs, auto const& rhs) { return !std::less_equal<std::string>()(lhs, rhs); });
+		std::sort(m_words.begin(), m_words.end(), std::greater<std::string>());
 	}
 	else
 	{
