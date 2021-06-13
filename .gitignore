@@ -5,3 +5,7 @@
 /.vs/SortWord/v16/ipch/AutoPCH
 /.vs
 /out/build
+/out/install/x64-Debug/lib
+/out/install/x64-Debug/include
+/out/install/x64-Release/lib
+/out/install/x64-Release/include

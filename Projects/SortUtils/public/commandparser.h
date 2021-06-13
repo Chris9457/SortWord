@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include <words.h>
 #include <stdexcept>
 #include <string>
 #include <deque>
@@ -15,8 +16,6 @@ public:
 class CommandParser
 {
 public:
-	using Words = std::deque<std::string>;
-
 	explicit CommandParser(int argc, char* argv[]) noexcept;
 	void parse();
 

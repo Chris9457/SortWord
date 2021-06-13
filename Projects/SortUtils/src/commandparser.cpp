@@ -46,12 +46,17 @@ void CommandParser::parse()
 			if (!bReverse && !bUnique ||
 				bReverse && m_bReverse ||
 				bUnique && m_bUnique)
-				throw CommandParserEx("Bad flag");
+				throw CommandParserEx("Bad flags!");
 
 			m_bReverse |= bReverse;
 			m_bUnique |= bUnique;
 			m_words.pop_front();
 		}
+	}
+
+	if (m_words.empty())
+	{
+		throw CommandParserEx("Empty word list!");
 	}
 }
 
@@ -65,7 +70,7 @@ bool CommandParser::isUnique() const noexcept
 	return m_bUnique;
 }
 
-const CommandParser::Words& CommandParser::getWords() const noexcept
+const Words& CommandParser::getWords() const noexcept
 {
 	return m_words;
 }
